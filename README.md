@@ -1,6 +1,6 @@
 # simple-lamp-vagrantbox
 
-This is the configuration for a simple LAMP stack vagrant box, based on ([ubuntu/xenial64](https://app.vagrantup.com/ubuntu/boxes/xenial64)
+This is the configuration for a simple LAMP stack vagrant box, based on [ubuntu/xenial64](https://app.vagrantup.com/ubuntu/boxes/xenial64)
 
 The provisioning file was inspired by this [one](https://github.com/sitepoint-editors/vagrant-base-config/blob/master/provision/setup.sh).
 
