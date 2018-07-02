@@ -2,6 +2,8 @@
 
 echo "Provisioning virtual machine..."
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Git
 echo "Installing Git..."
 sudo apt-get install git -y > /dev/null
