@@ -33,8 +33,11 @@ Vagrant.configure("2") do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.network "private_network", ip: "192.168.40.10"
+  config.vm.network "private_network", ip: "192.168.100.10"
   config.vm.hostname = "xenialdev"
+
+  # Forwarded ports
+  config.vm.network "forwarded_port", guest: 3306, host: 3307
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -47,6 +50,18 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=666"]
+
+  config.vm.synced_folder "C:\\Users\\Christopher\\Documents\\Projects\\Personal\\simpleapi", "/var/www/simpleapi", 
+    owner: "vagrant", 
+    group: "vagrant",
+    mount_options: ["dmode=777,fmode=777"]
+    #type: "smb"
+
+  config.vm.synced_folder "C:\\Users\\Christopher\\Documents\\Projects\\Personal\\enterateapi", "/var/www/enterateapi",
+    owner: "vagrant", 
+    group: "vagrant",
+    mount_options: ["dmode=777,fmode=777"]
+    #type: "smb"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
